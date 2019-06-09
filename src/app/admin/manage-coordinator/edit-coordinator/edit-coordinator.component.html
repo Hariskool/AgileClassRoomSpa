@@ -1,0 +1,55 @@
+
+<div class="col-md-8">
+    <div class="card">
+        <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+      <div class="card-header">
+        <strong>Coordinator</strong>
+        <small>Edit Form</small>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="company">UserName</label>
+          <input class="form-control" id="userName" name="userName" placeholder="Enter your UserName" type="text"[(ngModel)]="coordinaorModel.UserName">
+          <input type="hidden" id="CoordinatorId" name="CoordinatorId"  [(ngModel)]="coordinaorModel.CoordinatorId">
+        </div>
+        <div class="form-group">
+          <label for="vat">FullName</label>
+          <input class="form-control" id="fullname" name="fullname"  placeholder="Enter your" type="text" [(ngModel)]="coordinaorModel.FullName">
+        </div>
+        <div class="form-group">
+          <label for="street">Email</label>
+          <input class="form-control" id="email" name="email" placeholder="Enter Email" type="email" [(ngModel)]="coordinaorModel.EmailId">
+        </div>
+        <div class="form-group">
+          <label for="street">Password</label>
+          <input class="form-control" id="password" name="password" placeholder="Enter Email" type="password" [(ngModel)]="coordinaorModel.Password">
+        </div>
+        <div class="form-group">
+          <label for="street">Status</label>
+          <input class="form-control" type="checkbox" name="Status" [(ngModel)]="coordinaorModel.Status" maxlength="50" #refStatus="ngModel"
+          id="Status" required>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-8">
+            <label for="contactNo">Contact no</label>
+            <input class="form-control" id="Contact no" placeholder="Enter your Contact" type="number" name="Contact no" [(ngModel)]="coordinaorModel.Contactno">
+          </div>
+          <div class="form-group col-sm-4">
+            <label for="postal-code">Department</label>
+            <select required name="DepartmentID" #refDepartmentID="ngModel" class="form-control" name="Department" [(ngModel)]="coordinaorModel.DepartmentId">
+              <option value=''>Please select Value</option>
+              <option *ngFor="let dep of DepartmentList" [ngValue]="dep.DepartmentId">
+                  {{dep.DepartmentName}}
+              </option>
+          </select>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+        <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+      </div>
+    </form>
+    </div>
+
+  </div>

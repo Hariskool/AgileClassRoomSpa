@@ -1,0 +1,56 @@
+
+<div class="col-md-8">
+  <div class="card">
+      <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="card-header">
+      <strong>Student</strong>
+      <small>Form</small>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="company">UserName</label>
+        <input class="form-control" id="userName" name="userName" placeholder="Enter your UserName" type="text"[(ngModel)]="studentModel.UserName">
+      </div>
+      <div class="form-group">
+        <label for="vat">FullName</label>
+        <input class="form-control" id="fullname" name="fullname"  placeholder="Enter your" type="text" [(ngModel)]="studentModel.FullName">
+      </div>
+      <div class="form-group">
+        <label for="street">Email</label>
+        <input class="form-control" id="email" name="email" placeholder="Enter Email" type="email" [(ngModel)]="studentModel.EmailId">
+      </div>
+      <div class="form-group">
+        <label for="street">Password</label>
+        <input class="form-control" id="password" name="password" placeholder="Enter Email" type="password" [(ngModel)]="studentModel.Password">
+      </div>
+      <div class="form-group">
+        <label for="street">Status</label>
+        <input class="form-control" type="checkbox" name="Status" [(ngModel)]="studentModel.Status" maxlength="50" #refStatus="ngModel"
+        id="Status" required>
+      </div>
+
+        <div class="form-group">
+          <label for="contactNo">Contact no</label>
+          <input class="form-control" id="Contact no" placeholder="Enter your Contact" type="number" name="Contact no" [(ngModel)]="studentModel.Contactno">
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-4">
+            <label for="contactNo">Semester</label>
+            <input class="form-control" id="Semester" placeholder="Enter your Semester" type="number" name="Semester" [(ngModel)]="studentModel.Semester">
+          </div>
+          <div class="form-group col-sm-4">
+            <label for="Cgpa">CGPA</label>
+            <input class="form-control" id="Cgpa" placeholder="Enter your CGPA" type="number" name="CGPA" [(ngModel)]="studentModel.Cgpa">
+
+          </div>
+        </div>
+
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+      <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+    </div>
+  </form>
+  </div>
+
+</div>

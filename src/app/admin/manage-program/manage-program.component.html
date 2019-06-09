@@ -1,0 +1,48 @@
+<h4>All Coordinator</h4>
+<hr>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="example-header">
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+        </div>
+
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+            <ng-container matColumnDef="ProgramID">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ProgramID </th>
+              <td mat-cell *matCellDef="let element"> {{element.ProgramID}} </td>
+            </ng-container>
+            <ng-container matColumnDef="ProgramName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>  ProgramName </th>
+              <td mat-cell *matCellDef="let element"> {{element.ProgramName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="ProgramCode">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ProgramCode </th>
+              <td mat-cell *matCellDef="let element"> {{element.ProgramCode}} </td>
+            </ng-container>
+            <ng-container matColumnDef="CoordinatorName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> CoordinatorName </th>
+              <td mat-cell *matCellDef="let element"> {{element.CoordinatorInfo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="TotalCreditHour">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> TotalCreditHour </th>
+              <td mat-cell *matCellDef="let element"> {{element.TotalCreditHours}} </td>
+            </ng-container>
+                               <!-- EditAction Column -->
+            <ng-container matColumnDef="Action">
+              <th mat-header-cell *matHeaderCellDef> Action </th>
+              <td mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" [routerLink]="['/admin/program/edit',element.PorgramID]"><mat-icon>edit</mat-icon></button>
+                <button mat-mini-fab color="primary"  (click)="Delete(element.ProgramID)"><mat-icon>delete</mat-icon></button>
+              </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>

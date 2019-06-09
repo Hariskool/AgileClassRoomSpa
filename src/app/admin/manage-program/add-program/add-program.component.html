@@ -1,0 +1,42 @@
+
+<div class="col-md-8">
+  <div class="card">
+      <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="card-header">
+      <strong>Program</strong>
+      <small>Form</small>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="ProgramName">ProgramName</label>
+        <input class="form-control" id="ProgramName" name="ProgramName" placeholder="Enter Program Name" type="text"[(ngModel)]="programViewModel.ProgramName">
+      </div>
+      <div class="form-group">
+        <label for="ProgramCode">ProgramCode</label>
+        <input class="form-control" id="ProgramCode" name="ProgramCode"  placeholder="Enter Program Code" type="text" [(ngModel)]="programViewModel.ProgramCode">
+      </div>
+
+      <div class="row">
+        <div class="form-group col-sm-8">
+          <label for="TotalCreditHours">Total Credit Hours</label>
+          <input class="form-control" id="TotalCreditHours" placeholder="Enter Total Credit Hours" type="number" name="Contact no" [(ngModel)]="programViewModel.TotalCreditHours">
+        </div>
+        <div class="form-group col-sm-8">
+          <label for="postal-code">Coordinator</label>
+          <select required name="DepartmentID" #refDepartmentID="ngModel" class="form-control" name="Department" [(ngModel)]="programViewModel.CoordinatorId">
+            <option value=''>Please select Coordinator</option>
+            <option *ngFor="let cor of CoordinatorList" [ngValue]="cor.CoordinatorId">
+                {{cor.FullName}} {{cor.EmailId}}
+            </option>
+        </select>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+      <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+    </div>
+  </form>
+  </div>
+
+</div>

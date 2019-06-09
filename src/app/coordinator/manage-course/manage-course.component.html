@@ -1,0 +1,49 @@
+<h4>All Courses</h4>
+<hr>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="example-header">
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+        </div>
+
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+            <ng-container matColumnDef="CourseName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>  CourseName </th>
+              <td mat-cell *matCellDef="let element"> {{element.CourseName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="CourseCode">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> CourseCode </th>
+              <td mat-cell *matCellDef="let element"> {{element.CourseCode}} </td>
+            </ng-container>
+            <ng-container matColumnDef="CreditHours">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> CreditHours </th>
+              <td mat-cell *matCellDef="let element"> {{element.CreditHours}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Program">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Program </th>
+              <td mat-cell *matCellDef="let element"> {{element.ProgramInfo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Coordinator">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Coordiantor </th>
+              <td mat-cell *matCellDef="let element"> {{element.CoordinatorName}} </td>
+            </ng-container>
+            <!-- EditAction Column -->
+            <ng-container matColumnDef="Action">
+              <th mat-header-cell *matHeaderCellDef> Action </th>
+              <td mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" [routerLink]="['/Coordinator/Course/Edit',element.CourseID]"><mat-icon>edit</mat-icon></button>
+                <button mat-mini-fab color="primary"  (click)="Delete(element.CourseID)"><mat-icon>delete</mat-icon></button>
+              </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
