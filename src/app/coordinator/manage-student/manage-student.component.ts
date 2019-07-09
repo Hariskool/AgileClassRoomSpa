@@ -18,7 +18,7 @@ export class ManageStudentComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   displayedColumns: string[] = ['StudentName', 'EmailID',
-    'ContactNo', 'Password', 'Status', 'Department',  'Semester', 'Cgpa'];
+  'ContactNo', 'Password', 'Status', 'CGPA', 'Semester', 'Department'];
   dataSource: any;
   constructor(private _Route: Router,
     private studentService: StudentService,

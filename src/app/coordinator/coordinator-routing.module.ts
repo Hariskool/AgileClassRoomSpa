@@ -13,6 +13,7 @@ import {AddstudentComponent} from "./manage-student/addstudent/addstudent.compon
 import {EditstudentComponent} from "./manage-student/editstudent/editstudent.component";
 import {EditsectionComponent} from "./manage-section/editsection/editsection.component";
 import {AddsectionComponent} from "./manage-section/addsection/addsection.component";
+import { AdllenrolComponent } from './manage-enrolment/adllenrol/adllenrol.component';
 
 const routes: Routes = [{
   path: '',
@@ -52,6 +53,9 @@ const routes: Routes = [{
       data: {
         title: 'enrolment'
       }
+    },{
+      path: 'addenrol',
+      component: AdllenrolComponent,
     },
     {
       path: 'student',

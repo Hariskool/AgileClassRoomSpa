@@ -1,19 +1,20 @@
-<div class="col-md-12">
+<div class="col-md-10">
   <div class="card">
-    <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+
       <div class="card-header">
         <strong>Progran</strong>
         <small>Form</small>
 
       </div>
+      <form class="form-inline" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
       <div class="card-body">
-        <div clas="row">
-          <div class="form-group">
-            <label for="SectionNo">SectionNo</label>
-            <input class="form-control-lg" id="SectionNo" name="SectionNo" placeholder="Enter SectionNo" type="number" [(ngModel)]="sectionModel.SectionNo">
+
+          <div class="form-group mr-sm-2">
+            <label for="SectionNo" class="mr-sm-2">SectionNo</label>
+            <input class="form-control mr-sm-2" id="SectionNo" name="SectionNo" placeholder="Enter SectionNo" type="number" [(ngModel)]="sectionModel.SectionNo">
           </div>
-        <div class="form-group col-sm-4"><label for="Course">Course</label>
-          <select required name="CourseID" #refCourse="ngModel" class="form-control-lg" name="CourseID" [(ngModel)]="sectionModel.CourseID">
+        <div class="form-group mr-sm-2"><label for="Course" class="mr-sm-2">Course</label>
+          <select required name="CourseID" #refCourse="ngModel" class="form-control mr-sm-2" name="CourseID" [(ngModel)]="sectionModel.CourseID">
             <option>Please select Value</option>
             <option *ngFor="let cor of CourseList" [ngValue]="cor.CourseID">
               {{cor.CourseCode}}--{{cor.CourseName}}
@@ -21,16 +22,17 @@
           </select>
       </div>
 
-          <div class="form-group col-sm-4"><label for="Course">Teacher</label>
-            <select required name="TeacherID" #refTeacher="ngModel" class="form-control-lg" name="TeacherID" [(ngModel)]="sectionModel.TeacherID">
+          <div class="form-group mr-sm-2"><label for="Course" class="mr-sm-2">Teacher</label>
+            <select required name="TeacherID" #refTeacher="ngModel" class="form-control mr-sm-2" name="TeacherID" [(ngModel)]="sectionModel.TeacherID">
               <option>Please select Value</option>
               <option *ngFor="let tec of TeacherList" [ngValue]="tec.TeacherId">
                 {{tec.FullName}}--{{tec.EmailId}}
               </option>
             </select>
           </div>
-        </div>
+
       </div>
+
       <div class="card-footer">
         <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
         <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
@@ -38,3 +40,4 @@
     </form>
   </div>
 </div>
+
