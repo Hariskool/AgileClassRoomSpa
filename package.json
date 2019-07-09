@@ -1,5 +1,5 @@
 {
-  "name": "@coreui/coreui-free-angular-admin-template",
+  "name": "AgileSPA",
   "version": "2.4.5",
   "description": "CoreUI Free Angular 2+ Admin Template",
   "author": {
@@ -19,11 +19,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build --prod --aot --buildOptimizer --commonChunk --vendorChunk --optimization --progress",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +47,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.6.5",
+    "express": "^4.17.1",
     "flag-icon-css": "^3.3.0",
     "font-awesome": "^4.7.0",
     "moment": "^2.24.0",
@@ -52,11 +55,13 @@
     "ng2-charts": "^1.6.0",
     "ngx-bootstrap": "^3.2.0",
     "ngx-perfect-scrollbar": "^7.2.1",
+    "path": "^0.12.7",
     "rxjs": "^6.4.0",
     "simple-line-icons": "^2.4.1",
     "ts-helpers": "^1.1.2",
     "tsickle": "^0.34.3",
     "tslib": "^1.9.0",
+    "typescript": "~3.2.4",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
@@ -68,6 +73,7 @@
     "@types/jasminewd2": "^2.0.6",
     "@types/node": "^11.11.4",
     "codelyzer": "^4.5.0",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "^3.3.0",
     "jasmine-spec-reporter": "^4.2.1",
     "karma": "^4.0.1",
@@ -77,8 +83,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "^5.4.2",
     "ts-node": "^8.0.3",
-    "tslint": "^5.14.0",
-    "typescript": "~3.2.4"
+    "tslint": "^5.14.0"
   },
   "engines": {
     "node": ">= 8.9.4",
