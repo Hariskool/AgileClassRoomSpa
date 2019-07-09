@@ -41,10 +41,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { NotificationComponent } from './notification/notification.component';
-import { AdminlogoutComponent } from './Login/adminlogout/adminlogout.component';
-import { StudentlogoutComponent } from './Login/studentlogout/studentlogout.component';
-import { TeacherlogoutComponent } from './Login/teacherlogout/teacherlogout.component';
-import { CoordinatorlogoutComponent } from './Login/coordinatorlogout/coordinatorlogout.component';
+
 import { LoginComponent } from './views/login/login.component';
 
 
@@ -75,10 +72,7 @@ import { LoginComponent } from './views/login/login.component';
     LoginComponent,
     RegisterComponent,
     NotificationComponent,
-    AdminlogoutComponent,
-    StudentlogoutComponent,
-    TeacherlogoutComponent,
-    CoordinatorlogoutComponent,
+
   ],
   providers: [{
     provide: LocationStrategy,

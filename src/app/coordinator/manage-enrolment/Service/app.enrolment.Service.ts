@@ -4,7 +4,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { EnrolModel } from '../Models/app.EnrolModel';
 import {environment} from '../../../../environments/environment';
-import { SectionModel } from '../../../../../AgileClassRoomSpa/src/app/coordinator/manage-section/Models/app.SectionModel';
+import {SectionModel } from '../../manage-section/Models/app.SectionModel';
 import { StudentModel } from '../../manage-student/Model/app.StudentModel';
 @Injectable({
   providedIn: 'root'

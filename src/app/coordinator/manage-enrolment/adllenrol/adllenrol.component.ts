@@ -1,5 +1,5 @@
 import { EnrolModel } from './../Models/app.EnrolModel';
-import { SectionModel } from './../../../../../AgileClassRoomSpa/src/app/coordinator/manage-section/Models/app.SectionModel';
+import {SectionModel } from '../../manage-section/Models/app.SectionModel';
 import { StudentModel } from './../../manage-student/Model/app.StudentModel';
 import { EnrolService } from './../Service/app.enrolment.Service';
 import { Component, OnInit } from '@angular/core';

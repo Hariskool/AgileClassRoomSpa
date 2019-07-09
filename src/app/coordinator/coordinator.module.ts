@@ -19,11 +19,12 @@ import { AdllenrolComponent } from './manage-enrolment/adllenrol/adllenrol.compo
 import { EditenrolComponent } from './manage-enrolment/editenrol/editenrol.component';
 import { EditsectionComponent } from './manage-section/editsection/editsection.component';
 import { AddsectionComponent } from './manage-section/addsection/addsection.component';
+import {CoordinatorDashboardComponent} from './coordinator-dashboard/coordinator-dashboard.component';
 @NgModule({
   declarations: [ManageTeacherComponent, ManageSectionComponent,
      ManageCourseComponent, AddcourseComponent, EditcourseComponent ,
     ManageEnrolmentComponent,ManageStudentComponent, EditteacherComponent, AddteacherComponent, AddstudentComponent,
-    EditstudentComponent, AdllenrolComponent, EditenrolComponent, EditsectionComponent, AddsectionComponent],
+    EditstudentComponent, AdllenrolComponent, CoordinatorDashboardComponent, EditenrolComponent, EditsectionComponent, AddsectionComponent],
   imports: [
     CommonModule,
     CoordinatorRoutingModule,

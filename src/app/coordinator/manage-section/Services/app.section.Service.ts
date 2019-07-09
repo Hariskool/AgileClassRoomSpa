@@ -7,7 +7,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angul
 // import { environment } from 'src/app/Shared/environment';
 import {environment} from '../../../../environments/environment';
 import {CourseModel} from '../../manage-course/Models/app.CourseModel';
-import {TeacherModel} from "../../manage-teacher/Model/app.TeacherModel";
+import {TeacherModel} from '../../manage-teacher/Model/app.TeacherModel';
 @Injectable({
   providedIn: 'root'
 })
