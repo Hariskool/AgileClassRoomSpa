@@ -59,6 +59,10 @@ export const routes: Routes = [
         loadChildren: './coordinator/coordinator.module#CoordinatorModule'
       },
       {
+        path: 'teacher',
+        loadChildren: './teacher/teacher.module#TeacherModule'
+      },
+      {
         path: 'buttons',
         loadChildren: './views/buttons/buttons.module#ButtonsModule'
       },
