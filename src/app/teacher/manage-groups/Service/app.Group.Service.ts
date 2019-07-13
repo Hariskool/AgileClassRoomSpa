@@ -1,4 +1,5 @@
-import { AssessmentModel } from './../Model/app.AssessmentModel';
+import { GroupModel } from './../Model/app.GroupModel';
+
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs'
 import { catchError, tap } from 'rxjs/operators'
@@ -9,10 +10,10 @@ import {environment} from '../../../../environments/environment';
 @Injectable({
     providedIn: 'root'
 })
-export class AssessmentService {
+export class GroupService {
 
   private data: any;
-  private apiUrl = environment.apiEndpoint +"/api/ManageAssessment/";
+  private apiUrl = environment.apiEndpoint +"/api/ManageGroup/";
   token: any;
   username: any;
 
@@ -22,48 +23,48 @@ constructor(private http: HttpClient) {
     }
 
 
- public AddAssessment(assessmentModel: AssessmentModel) {
+ public AddGroup(groupModel: GroupModel) {
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
-        return this.http.post<any>(this.apiUrl, assessmentModel, { headers: headers })
+        return this.http.post<any>(this.apiUrl, groupModel, { headers: headers })
             .pipe(
                 catchError(this.handleError)
             );
     }
 
     // Get All Assessment
-        public GetAllAssessments() {
+        public GetAllGroups() {
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
-        return this.http.get<AssessmentModel[]>(this.apiUrl, { headers: headers }).pipe(tap(data => data),
+        return this.http.get<GroupModel[]>(this.apiUrl, { headers: headers }).pipe(tap(data => data),
             catchError(this.handleError)
         );
     }
 
 
     // Get All Role By ID
-    public GetAssessmentById(AssessmentID) {
+    public GetGroupById(AssessmentID) {
         var editUrl = this.apiUrl + '/' + AssessmentID;
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
-        return this.http.get<AssessmentModel>(editUrl, { headers: headers }).pipe(tap(data => data),
+        return this.http.get<GroupModel>(editUrl, { headers: headers }).pipe(tap(data => data),
             catchError(this.handleError)
         );
     }
 
     // Update assessment
-    public UpdateAssessment(assessmentModel: AssessmentModel) {
-        var putUrl = this.apiUrl + '/' + assessmentModel.assessmentId;
+    public UpdateGroup(groupModel: GroupModel) {
+        var putUrl = this.apiUrl + '/' + groupModel.groupId;
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
-        return this.http.put<any>(putUrl, assessmentModel, { headers: headers })
+        return this.http.put<any>(putUrl, groupModel, { headers: headers })
             .pipe(
                 catchError(this.handleError)
             );
     }
 
-    public DeleteAssessment(AssessmentId) {
-        var deleteUrl = this.apiUrl + '/' + AssessmentId;
+    public DeleteAssessment(GroupId) {
+        var deleteUrl = this.apiUrl + '/' + GroupId;
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
         return this.http.delete<any>(deleteUrl, { headers: headers })

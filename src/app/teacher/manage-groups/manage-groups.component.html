@@ -1,3 +1,25 @@
-<p>
-  manage-groups works!
-</p>
+<h4>All Groups</h4>
+<hr>
+    <div class="row">
+      <div class="col-md-12">
+          <div *ngFor="let group of groupModel" >
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+
+    <h5 class="card-title">GroupNo{{group.groupNo}}
+
+    </h5>
+    <div *ngFor="let api of group.groupMembers">
+      <div *ngIf="(group.groupId == api.groupId)">
+    <p class="card-text">studentIds{{api.studentId}} </p>
+    </div>
+  </div>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+

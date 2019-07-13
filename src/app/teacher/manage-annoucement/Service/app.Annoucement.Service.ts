@@ -1,4 +1,5 @@
-import { AssessmentModel } from './../Model/app.AssessmentModel';
+import { AnnoucementModel } from './../Model/app.AnnouceModel';
+
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs'
 import { catchError, tap } from 'rxjs/operators'
@@ -9,10 +10,10 @@ import {environment} from '../../../../environments/environment';
 @Injectable({
     providedIn: 'root'
 })
-export class AssessmentService {
+export class AnnoucementService {
 
   private data: any;
-  private apiUrl = environment.apiEndpoint +"/api/ManageAssessment/";
+  private apiUrl = environment.apiEndpoint +"/api/ManageAnnoucement/";
   token: any;
   username: any;
 
@@ -22,48 +23,48 @@ constructor(private http: HttpClient) {
     }
 
 
- public AddAssessment(assessmentModel: AssessmentModel) {
+ public AddAnnoucement(projectModel: AnnoucementModel) {
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
-        return this.http.post<any>(this.apiUrl, assessmentModel, { headers: headers })
+        return this.http.post<any>(this.apiUrl, projectModel, { headers: headers })
             .pipe(
                 catchError(this.handleError)
             );
     }
 
-    // Get All Assessment
-        public GetAllAssessments() {
+    // Get All Project
+        public GetAllAnnoucements() {
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
-        return this.http.get<AssessmentModel[]>(this.apiUrl, { headers: headers }).pipe(tap(data => data),
+        return this.http.get<AnnoucementModel[]>(this.apiUrl, { headers: headers }).pipe(tap(data => data),
             catchError(this.handleError)
         );
     }
 
 
-    // Get All Role By ID
-    public GetAssessmentById(AssessmentID) {
-        var editUrl = this.apiUrl + '/' + AssessmentID;
+    // Get All Project By ID
+    public GetAnnoucementById(ProjectId) {
+        var editUrl = this.apiUrl + '/' + ProjectId;
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
-        return this.http.get<AssessmentModel>(editUrl, { headers: headers }).pipe(tap(data => data),
+        return this.http.get<AnnoucementModel>(editUrl, { headers: headers }).pipe(tap(data => data),
             catchError(this.handleError)
         );
     }
 
-    // Update assessment
-    public UpdateAssessment(assessmentModel: AssessmentModel) {
-        var putUrl = this.apiUrl + '/' + assessmentModel.assessmentId;
+    // Update Project
+    public UpdateAnnoucement(projectModel: AnnoucementModel) {
+        var putUrl = this.apiUrl + '/' + projectModel.annoucementId;
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
-        return this.http.put<any>(putUrl, assessmentModel, { headers: headers })
+        return this.http.put<any>(putUrl, projectModel, { headers: headers })
             .pipe(
                 catchError(this.handleError)
             );
     }
 
-    public DeleteAssessment(AssessmentId) {
-        var deleteUrl = this.apiUrl + '/' + AssessmentId;
+    public DeleteProject(ProjectId) {
+        var deleteUrl = this.apiUrl + '/' + ProjectId;
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
         return this.http.delete<any>(deleteUrl, { headers: headers })

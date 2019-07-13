@@ -1,3 +1,4 @@
+import { ManageGroupsComponent } from './manage-groups/manage-groups.component';
 import { AddprojectComponent } from './manage-project/addproject/addproject.component';
 import { AddaprojectComponent } from './manage-assignproject/addaproject/addaproject.component';
 import { ManageAssignprojectComponent } from './manage-assignproject/manage-assignproject.component';
@@ -17,6 +18,12 @@ const routes: Routes = [{
     {
       path: '',
       redirectTo: 'course'
+    },{
+      path: 'Group',
+      component: ManageGroupsComponent,
+      data: {
+        title: 'Assessment'
+      }
     },
     {
       path: 'Assessment',

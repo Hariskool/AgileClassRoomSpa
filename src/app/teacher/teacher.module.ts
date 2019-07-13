@@ -19,11 +19,13 @@ import { AddaprojectComponent } from './manage-assignproject/addaproject/addapro
 import { EditaprojectComponent } from './manage-assignproject/editaproject/editaproject.component';
 import { EditgroupComponent } from './manage-groups/editgroup/editgroup.component';
 import { AddgroupComponent } from './manage-groups/addgroup/addgroup.component';
+import { AddannouceComponent } from './manage-annoucement/addannouce/addannouce.component';
+import { EditannouceComponent } from './manage-annoucement/editannouce/editannouce.component';
 
 @NgModule({
   declarations: [ManageAssessmentComponent, ManageProjectComponent,
     ManageAssignprojectComponent, ManageAnnoucementComponent, ManageGroupsComponent,
-     GetStudentsComponent, ManageResultComponent, AddAssessmentComponent, EditAssessmentComponent, EditprojectComponent, AddprojectComponent, AddaprojectComponent, EditaprojectComponent, EditgroupComponent, AddgroupComponent ],
+     GetStudentsComponent, ManageResultComponent, AddAssessmentComponent, EditAssessmentComponent, EditprojectComponent, AddprojectComponent, AddaprojectComponent, EditaprojectComponent, EditgroupComponent, AddgroupComponent, AddannouceComponent, EditannouceComponent ],
   imports: [
     CommonModule,
     TeacherRoutingModule,
