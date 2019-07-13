@@ -1,3 +1,28 @@
-<p>
-  add-assessment works!
-</p>
+
+<div class="col-md-8">
+  <div class="card">
+      <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="card-header">
+      <strong>Assessment</strong>
+      <small>Form</small>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="AssessmentName">AssessmentName</label>
+        <input class="form-control" id="AssessmentName" name="AssessmentName" placeholder="Enter AssessmentName " type="text"[(ngModel)]="assessmentModel.assessmentName">
+      </div>
+      <div class="form-group">
+        <label for="ProgramCode">TotalMarks</label>
+        <input class="form-control" id="TotalMarks" name="TotalMarks"  placeholder="Enter TotalMarks" type="text" [(ngModel)]="assessmentModel.totalMarks">
+      </div>
+
+
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+      <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+    </div>
+  </form>
+  </div>
+
+</div>

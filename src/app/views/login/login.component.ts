@@ -66,15 +66,23 @@ export class LoginComponent  implements OnInit
 
                     this._Route.navigate(['/admin']);
                 }
-
                 if (response.Usertype == "2")
                 {
                     let config = new MatSnackBarConfig();
                     config.duration = this.setAutoHide ? this.autoHide : 0;
                     config.verticalPosition = this.verticalPosition;
 
-                    this.snackBar.open("Logged in Successfully", this.action ? this.actionButtonLabel : undefined, config);
-                    this._Route.navigate(['/User/Dashboard']);
+                    this.snackBar.open("Logged in Successfully Student", this.action ? this.actionButtonLabel : undefined, config);
+                    this._Route.navigate(['/student']);
+                }
+                if (response.Usertype == "3")
+                {
+                    let config = new MatSnackBarConfig();
+                    config.duration = this.setAutoHide ? this.autoHide : 0;
+                    config.verticalPosition = this.verticalPosition;
+
+                    this.snackBar.open("Logged in Successfully Teacher", this.action ? this.actionButtonLabel : undefined, config);
+                    this._Route.navigate(['/teacher']);
                 }
                 if (response.Usertype == "4")
                 {

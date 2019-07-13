@@ -13,12 +13,17 @@ import { GetStudentsComponent } from './get-students/get-students.component';
 import { ManageResultComponent } from './manage-result/manage-result.component';
 import { AddAssessmentComponent } from './manage-assessment/add-assessment/add-assessment.component';
 import { EditAssessmentComponent } from './manage-assessment/edit-assessment/edit-assessment.component';
-
+import { EditprojectComponent } from './manage-project/editproject/editproject.component';
+import { AddprojectComponent } from './manage-project/addproject/addproject.component';
+import { AddaprojectComponent } from './manage-assignproject/addaproject/addaproject.component';
+import { EditaprojectComponent } from './manage-assignproject/editaproject/editaproject.component';
+import { EditgroupComponent } from './manage-groups/editgroup/editgroup.component';
+import { AddgroupComponent } from './manage-groups/addgroup/addgroup.component';
 
 @NgModule({
   declarations: [ManageAssessmentComponent, ManageProjectComponent,
     ManageAssignprojectComponent, ManageAnnoucementComponent, ManageGroupsComponent,
-     GetStudentsComponent, ManageResultComponent, AddAssessmentComponent, EditAssessmentComponent ],
+     GetStudentsComponent, ManageResultComponent, AddAssessmentComponent, EditAssessmentComponent, EditprojectComponent, AddprojectComponent, AddaprojectComponent, EditaprojectComponent, EditgroupComponent, AddgroupComponent ],
   imports: [
     CommonModule,
     TeacherRoutingModule,

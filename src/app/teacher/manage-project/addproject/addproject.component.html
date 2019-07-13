@@ -1,0 +1,41 @@
+
+<div class="col-md-8">
+  <div class="card">
+      <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="card-header">
+      <strong>Project</strong>
+      <small>Form</small>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="name">name</label>
+        <input class="form-control" id="name" name="name" placeholder="Enter your project name" type="text"[(ngModel)]="projectModel.name">
+      </div>
+      <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea class="form-control" id="textarea-input" name="textarea-input"[(ngModel)]="projectModel.description" placeholder="Content.." rows="9"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="street">Enddate</label>
+        <input class="form-control" id="CreditHours" name="EndDate" placeholder="Enter EndDate" type="date" [(ngModel)]="projectModel.EndDate">
+      </div>
+        <div class="form-group col-sm-4">
+          <label for="postal-code">Assessment</label>
+          <select required name="Assessment" #refDepartmentID="ngModel" class="form-control" name="Department" [(ngModel)]="projectModel.assessmentId">
+            <option value=''>Please select Value</option>
+            <option *ngFor="let ass of AssesmentList" [ngValue]="ass.assessmentId">
+                {{ass.assessmentName}}
+            </option>
+        </select>
+        </div>
+
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+      <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+    </div>
+  </form>
+  </div>
+
+</div>

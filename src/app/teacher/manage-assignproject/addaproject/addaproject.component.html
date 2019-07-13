@@ -1,0 +1,45 @@
+<div class="col-md-8">
+  <div class="card">
+      <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="card-header">
+      <strong>Assign Project</strong>
+      <small>Form</small>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="company">Course</label>
+        <select required name="CourseName"(change)="BindSection($event.target.value)" #refDepartmentID="ngModel" class="form-control" name="CourseName" [(ngModel)]="assignProjectModel.courseId">
+          <option value=''>Please select Value</option>
+          <option *ngFor="let cour of CourseList" [ngValue]="cour.CourseID" [value]="cour.CourseID">
+              {{cour.CourseName}}
+          </option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label for="company">Section</label>
+        <select required name="SectionName" [(ngModel)]="assignProjectModel.sectionId" class="form-control">
+          <option value=''>Please select Value</option>
+          <option *ngFor="let Sec of SectionList" [ngValue]="Sec.SectionID" [value]="Sec.SectionID">
+              Section--{{Sec.SectionNo}}
+          </option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label for="Project">Project</label>
+        <select required name="Project" #refDepartmentID="ngModel" class="form-control" name="Project" [(ngModel)]="assignProjectModel.projectId">
+          <option value=''>Please select Value</option>
+          <option *ngFor="let pro of ProjectList" [ngValue]="pro.projectId" [value]="pro.projectId">
+            {{pro.name}}
+          </option>
+      </select>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+      <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+    </div>
+  </form>
+  </div>
+
+</div>
+
