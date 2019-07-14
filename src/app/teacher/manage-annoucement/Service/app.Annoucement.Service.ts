@@ -1,3 +1,4 @@
+import { SectionModel } from './../../../coordinator/manage-section/Models/app.SectionModel';
 import { AnnoucementModel } from './../Model/app.AnnouceModel';
 
 import { Injectable } from '@angular/core';
@@ -7,6 +8,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angul
 
 // import { environment } from 'src/app/Shared/environment';
 import {environment} from '../../../../environments/environment';
+import { CourseModel } from '../../../coordinator/manage-course/Models/app.CourseModel';
 @Injectable({
     providedIn: 'root'
 })
@@ -14,6 +16,7 @@ export class AnnoucementService {
 
   private data: any;
   private apiUrl = environment.apiEndpoint +"/api/ManageAnnoucement/";
+  private editApiUrl = environment.apiEndpoint +"/api/AssiProjInfo/";
   token: any;
   username: any;
 
@@ -22,6 +25,25 @@ constructor(private http: HttpClient) {
         this.token = this.data.token;
     }
 
+    public TeacherCourses() {
+      let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
+      return this.http.get<CourseModel[]>(this.editApiUrl+ '/TeacherCourses' , { headers: headers }).pipe(tap(data => data),
+          catchError(this.handleError)
+      );
+  }
+
+    // public TeacherSections(courseId: number): Observable<SectionModel[]>
+    // {
+    //   return this.http.get<SectionModel[]>(this.editApiUrl + '/TeacherSections?courseId=' + courseId);
+    // }
+    public TeacherSections(courseId: number) {
+      let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
+      return this.http.get<SectionModel[]>(this.editApiUrl + '/TeacherSections?courseId=' + courseId, { headers: headers }).pipe(tap(data => data),
+          catchError(this.handleError)
+      );
+  }
 
  public AddAnnoucement(projectModel: AnnoucementModel) {
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });

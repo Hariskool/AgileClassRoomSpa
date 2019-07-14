@@ -1,3 +1,4 @@
+import { RegisteredStudent } from './../../get-students/Model/app.RegisteredStudent';
 import { SectionModel } from './../../../coordinator/manage-section/Models/app.SectionModel';
 import { CourseModel } from './../../../coordinator/manage-course/Models/app.CourseModel';
 import { Injectable } from '@angular/core';
@@ -27,6 +28,14 @@ constructor(private http: HttpClient) {
     // {
     //   return this.http.get<CourseModel[]>(this.editApiUrl + '/TeacherCourses');
     // }
+    public TeacherStudents() {
+      let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
+      return this.http.get<RegisteredStudent[]>(this.editApiUrl+ '/TeacherStudents' , { headers: headers }).pipe(tap(data => data),
+          catchError(this.handleError)
+      );
+  }
+
     public TeacherCourses() {
       let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);

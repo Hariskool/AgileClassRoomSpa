@@ -23,7 +23,7 @@ const routes: Routes = [{
   children: [
     {
       path: '',
-      redirectTo: 'course'
+      redirectTo: 'Course'
     },
     {
       path: 'Course',
@@ -33,58 +33,58 @@ const routes: Routes = [{
       }
     },
     {
-      path: 'addcourse',
+      path: 'Addcourse',
       component: AddcourseComponent,
     },
     {
-      path: 'course/edit/:CourseID',
+      path: 'Course/Edit/:CourseID',
       component: EditcourseComponent,
     },
     {
-      path: 'section',
+      path: 'Section',
       component: ManageSectionComponent,
       data: {
         title: 'section'
       }
     },
     {
-      path: 'enrolment',
+      path: 'Enrolment',
       component: ManageEnrolmentComponent,
       data: {
         title: 'enrolment'
       }
     },{
-      path: 'addenrol',
+      path: 'Addenrol',
       component: AdllenrolComponent,
     },
     {
-      path: 'student',
+      path: 'Student',
       component: ManageStudentComponent,
       data: {
         title: 'student'
       }
     },
     {
-      path: 'addstudent',
+      path: 'Addstudent',
       component: AddstudentComponent,
     },
     {
-      path: 'student/edit/:StudentID',
+      path: 'Student/Edit/:StudentID',
       component: EditstudentComponent,
     },
     {
-      path: 'teacher',
+      path: 'Teacher',
       component: ManageTeacherComponent,
       data: {
         title: 'teacher'
       }
     },
     {
-      path: 'addteacher',
+      path: 'Addteacher',
       component: AddteacherComponent,
     },
     {
-      path: 'teacher/edit/:TeacherID',
+      path: 'Teacher/edit/:TeacherID',
       component: EditteacherComponent,
     },
     {
@@ -95,11 +95,11 @@ const routes: Routes = [{
       }
     },
     {
-      path: 'section/edit/:SectionID',
+      path: 'Section/edit/:SectionID',
       component: EditsectionComponent,
     },
     {
-      path: 'addsection',
+      path: 'Addsection',
       component: AddsectionComponent,
     },
   ],

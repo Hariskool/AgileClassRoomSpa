@@ -32,7 +32,7 @@ export interface NavData {
 export const navItemsTeacher: NavData[] = [
   {
     name: 'Dashboard',
-    url: '/admin/Admindashboard',
+    url: '/Teacher/Teacherdashboard',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -44,23 +44,38 @@ export const navItemsTeacher: NavData[] = [
     name: 'Operations'
   },
   {
-    name: 'Depatment',
-    url: '/admin/department',
+    name: 'Annoucement',
+    url: '/Teacher/Annoucement',
     icon: 'icon-puzzle'
   },
   {
-    name: 'Role',
-    url: '/admin/role',
+    name: 'Assessment',
+    url: '/Teacher/Assessment',
     icon: 'icon-puzzle'
   },
   {
-    name: 'Coordinator',
-    url: '/admin/coordinator',
+    name: 'Project',
+    url: '/Teacher/Project',
     icon: 'icon-puzzle'
   },
   {
-    name: 'Program',
-    url: '/admin/program',
+    name: 'AssignProject',
+    url: '/Teacher/AssignProject',
     icon: 'icon-puzzle'
-  }
+  },
+  {
+    name: 'RegisteredStudents',
+    url: '/Teacher/GetStudent',
+    icon: 'icon-puzzle'
+  },
+  {
+    name: 'Groups',
+    url: '/Teacher/Groups',
+    icon: 'icon-puzzle'
+  },
+  {
+    name: 'Result',
+    url: '/Teacher/Result',
+    icon: 'icon-puzzle'
+  },
 ];

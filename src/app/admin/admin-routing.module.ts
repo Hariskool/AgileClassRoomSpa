@@ -26,28 +26,28 @@ const routes: Routes = [{
       redirectTo: 'department'
     },
     {
-      path: 'department',
+      path: 'Department',
       component: DepartmentComponent,
       data: {
         title: 'department'
       }
     },
     {
-      path: 'program',
+      path: 'Program',
       component: ManageProgramComponent,
       data: {
         title: 'program'
       }
-    }, { path: 'program/edit/:ProgramID', component: EditProgramComponent
+    }, { path: 'Program/edit/:ProgramID', component: EditProgramComponent
   },
-  { path: 'program/add', component: AddProgramComponent
+  { path: 'Program/add', component: AddProgramComponent
 },
 
     {
-      path: 'coordinator',
+      path: 'Coordinator',
       component: AllCoordinatorComponent,
       data: {
-        title: 'coordinator'
+        title: 'Coordinator'
       }
     },
     {
@@ -57,31 +57,31 @@ const routes: Routes = [{
         title: 'AdminDashboard'
       }
     },
-    { path: 'coordinator/edit/:CoordinatorID', component: EditCoordinatorComponent
+    { path: 'Coordinator/Edit/:CoordinatorID', component: EditCoordinatorComponent
   },
-  { path: 'coordinator/add', component: ManageCoordinatorComponent
+  { path: 'Coordinator/Add', component: ManageCoordinatorComponent
 },
     {
-      path: 'department',
+      path: 'Department',
       component: DepartmentComponent,
       data: {
-        title: 'department'
+        title: 'Department'
       }
     },
-    { path: 'department/edit/:DepartmentID', component: EditDepartmentComponent
+    { path: 'Department/Edit/:DepartmentID', component: EditDepartmentComponent
   },
-  { path: 'department/add', component: AddDepartmentComponent
+  { path: 'Department/Add', component: AddDepartmentComponent
 },
     {
-      path: 'role',
+      path: 'Role',
       component: RoleComponent,
       data: {
-        title: 'role'
+        title: 'Role'
       }
     },
-    { path: 'role/edit/:RoleID', component: EditRoleComponent
+    { path: 'Role/Edit/:RoleID', component: EditRoleComponent
   },
-  { path: 'role/add', component: AddRoleComponent
+  { path: 'Role/Add', component: AddRoleComponent
 },
   ],
 }

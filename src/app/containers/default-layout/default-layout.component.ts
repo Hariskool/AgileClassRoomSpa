@@ -1,9 +1,11 @@
+import { navItemsStudent } from './../../sideNavbar/_navStudent';
 import { NavService } from './../../Shared/app.NavShare.Service';
 //import { navItems } from './../../sideNavbar/_navAdmin';
 import { Component, OnDestroy, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { navItems } from '../../sideNavbar/_navAdmin';
 import { navItemsCoordinator } from '../../sideNavbar/_navCoordinator';
+import { navItemsTeacher } from '../../sideNavbar/_navTeacher';
 
 
 
@@ -31,12 +33,21 @@ export class DefaultLayoutComponent implements OnDestroy {
   ngOnInit(): void {
     var adminuser = localStorage.getItem('AdminUser');
     var coordinatoruser = localStorage.getItem('CoordinatorUser');
+    var Teacheruser = localStorage.getItem('TeacherUser');
+    var Studentuser = localStorage.getItem('StudentUser');
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     if(adminuser !=null){
       this.navItems=navItems;
-    }if(coordinatoruser !=null){
+    }
+    if(coordinatoruser !=null){
       this.navItems=navItemsCoordinator;
+    }
+    if(Teacheruser !=null){
+      this.navItems=navItemsTeacher;
+    }
+    if(Studentuser !=null){
+      this.navItems=navItemsStudent;
     }
   }
   ngOnDestroy(): void {

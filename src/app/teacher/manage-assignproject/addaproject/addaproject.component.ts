@@ -64,11 +64,11 @@ export class AddaprojectComponent implements OnInit {
             response => {
             this.output = response
             if (this.output.StatusCode == "409") {
-                alert('Project Already Exists');
+                alert('AssignProject Already Exists');
             }
             else if (this.output.StatusCode == "200") {
                 alert('Project Saved Successfully');
-                this._Route.navigate(['Teacher/Project']);
+                this._Route.navigate(['Teacher/AssignProject']);
             }
             else {
                 alert('Something Went Wrong');
