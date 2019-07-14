@@ -13,7 +13,7 @@ import {environment} from '../../../../environments/environment';
 export class CourseService {
 
   private data: any;
-  private apiUrl = environment.apiEndpoint +"/api/ManageCourses/";
+  private apiUrl = environment.apiEndpoint +"/api/ManageCourse/";
   private apiUrlProgram = environment.apiEndpoint +"/api/GetTeachers/";
   token: any;
   username: any;

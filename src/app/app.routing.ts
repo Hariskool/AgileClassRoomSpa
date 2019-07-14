@@ -51,16 +51,20 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'admin',
+        path: 'Admin',
         loadChildren: './admin/admin.module#AdminModule'
       },
       {
-        path: 'coordinator',
+        path: 'Coordinator',
         loadChildren: './coordinator/coordinator.module#CoordinatorModule'
       },
       {
-        path: 'teacher',
+        path: 'Teacher',
         loadChildren: './teacher/teacher.module#TeacherModule'
+      },
+      {
+        path: 'Student',
+        loadChildren: './student/student.module#StudentModule'
       },
       {
         path: 'buttons',

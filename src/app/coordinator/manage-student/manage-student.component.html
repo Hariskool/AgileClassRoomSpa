@@ -7,7 +7,8 @@
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
           </mat-form-field>
         </div>
-
+        ['StudentName', 'EmailID',
+        'ContactNo', 'Password', 'Status', 'CGPA', 'Semester', 'Department'];
         <div class="mat-elevation-z8">
           <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
             <ng-container matColumnDef="StudentName">
@@ -34,7 +35,7 @@
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Contactno </th>
                   <td mat-cell *matCellDef="let element"> {{element.Contactno}} </td>
                 </ng-container>
-                <ng-container matColumnDef="Cgpa">
+                <ng-container matColumnDef="CGPA">
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> CGPA </th>
                   <td mat-cell *matCellDef="let element"> {{element.Cgpa}} </td>
                 </ng-container>
