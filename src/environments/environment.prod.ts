@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndpoint: 'https://localhost:44389'
+  apiEndpoint: 'http://kool345-001-site1.gtempurl.com/'
 };
