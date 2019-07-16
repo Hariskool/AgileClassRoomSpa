@@ -1,5 +1,5 @@
 
-<div class="col-md-8">
+<div class="col-md-8 mx-auto">
   <div class="card">
       <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="card-header">
@@ -23,11 +23,7 @@
         <label for="street">Password</label>
         <input class="form-control" id="password" name="password" placeholder="Enter Email" type="password" [(ngModel)]="coordinaorModel.Password">
       </div>
-      <div class="form-group">
-        <label for="street">Status</label>
-        <input class="form-control" type="checkbox" name="Status" [(ngModel)]="coordinaorModel.Status" maxlength="50" #refStatus="ngModel"
-        id="Status" required>
-      </div>
+
       <div class="row">
         <div class="form-group col-sm-8">
           <label for="contactNo">Contact no</label>

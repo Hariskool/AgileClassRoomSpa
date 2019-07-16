@@ -1,9 +1,9 @@
-export class TeacherDashboardModel{
-
-public TotalProject: number;
+export class TeacherDashboard
+{
+  
+public TotalProjects: number;
 public TotalAnnoucement: number;
 public TotalAssessment: number;
 public TotalGroups: number;
 
 }
-

@@ -43,7 +43,7 @@ export class AddProgramComponent implements OnInit {
               }
               else if (this.output.StatusCode == "200") {
                   alert('Program Saved Successfully');
-                  this._Route.navigate(['admin/program/All']);
+                  this._Route.navigate(['Admin/Program']);
               }
               else {
                   alert('Something Went Wrong');

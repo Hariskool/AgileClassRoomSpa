@@ -32,7 +32,7 @@ export interface NavData {
 export const navItems: NavData[] = [
   {
     name: 'Dashboard',
-    url: '/admin/Admindashboard',
+    url: '/Admin/AdminDashboard',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -45,22 +45,22 @@ export const navItems: NavData[] = [
   },
   {
     name: 'Depatment',
-    url: '/admin/department',
+    url: '/Admin/Department',
     icon: 'icon-puzzle'
   },
   {
     name: 'Role',
-    url: '/admin/role',
+    url: '/Admin/Role',
     icon: 'icon-puzzle'
   },
   {
     name: 'Coordinator',
-    url: '/admin/coordinator',
+    url: '/Admin/Coordinator',
     icon: 'icon-puzzle'
   },
   {
     name: 'Program',
-    url: '/admin/program',
+    url: '/Admin/Program',
     icon: 'icon-puzzle'
   }
 ];

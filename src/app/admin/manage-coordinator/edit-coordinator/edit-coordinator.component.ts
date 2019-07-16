@@ -4,6 +4,7 @@ import { CoordinatorViewModel } from '../Model/app.CoordinatorViewModel';
 import { DepartmentService } from '../../department/Services/app.department.Service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CoordinatorService } from '../Services/app.Coodinator.Service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-coordinator',
@@ -54,14 +55,32 @@ this._departmentService = departmentService;
             response => {
             this.output = response
             if (this.output.StatusCode == "409") {
-                alert('Coordinator Already Exists');
+              Swal.fire({
+                position: 'center',
+                type: 'warning',
+                title: 'Coordinator Already existed',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
             else if (this.output.StatusCode == "200") {
-                alert('Coordinator Saved Successfully');
-                this._Route.navigate(['/Coordinator/All']);
+              Swal.fire({
+                position: 'center',
+                type: 'success',
+                title: 'Coordinator Edited',
+                showConfirmButton: false,
+                timer: 1500
+              })
+                this._Route.navigate(['Admin/Coordinator']);
             }
             else {
-                alert('Something Went Wrong');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'something went wrong',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
         });
     }

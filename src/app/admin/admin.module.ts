@@ -17,6 +17,7 @@ import { EditProgramComponent } from './manage-program/edit-program/edit-program
 import { AddProgramComponent } from './manage-program/add-program/add-program.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
+
 @NgModule({
   declarations: [DepartmentComponent, RoleComponent,
      ManageCoordinatorComponent, ManageProgramComponent,

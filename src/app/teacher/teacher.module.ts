@@ -1,3 +1,4 @@
+
 import { ManageAssessmentComponent } from './manage-assessment/manage-assessment.component';
 
 import { NgModule } from '@angular/core';
@@ -21,11 +22,14 @@ import { EditgroupComponent } from './manage-groups/editgroup/editgroup.componen
 import { AddgroupComponent } from './manage-groups/addgroup/addgroup.component';
 import { AddannouceComponent } from './manage-annoucement/addannouce/addannouce.component';
 import { EditannouceComponent } from './manage-annoucement/editannouce/editannouce.component';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 
 @NgModule({
   declarations: [ManageAssessmentComponent, ManageProjectComponent,
     ManageAssignprojectComponent, ManageAnnoucementComponent, ManageGroupsComponent,
-     GetStudentsComponent, ManageResultComponent, AddAssessmentComponent, EditAssessmentComponent, EditprojectComponent, AddprojectComponent, AddaprojectComponent, EditaprojectComponent, EditgroupComponent, AddgroupComponent, AddannouceComponent, EditannouceComponent ],
+     GetStudentsComponent, ManageResultComponent, AddAssessmentComponent, EditAssessmentComponent,
+     EditprojectComponent, AddprojectComponent, AddaprojectComponent, EditaprojectComponent, EditgroupComponent,
+     AddgroupComponent, AddannouceComponent, EditannouceComponent, TeacherDashboardComponent ],
   imports: [
     CommonModule,
     TeacherRoutingModule,

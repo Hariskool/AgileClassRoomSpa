@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DepartmentModel } from './Models/app.DepartmentModel';
 import { DepartmentService } from './Services/app.department.Service';
@@ -38,7 +39,9 @@ export class DepartmentComponent implements OnInit {
       );
   }
 
-
+  addbtn(){
+    this._Route.navigateByUrl('/Admin/Department/Add');
+  }
   Delete(DepartmentId) {
 
       if (confirm("Are you sure to delete department ?")) {
@@ -46,12 +49,24 @@ export class DepartmentComponent implements OnInit {
               (
               response => {
                   if (response.StatusCode == "200") {
-                      alert('Deleted Department Successfully');
+                    Swal.fire({
+                      position: 'center',
+                      type: 'success',
+                      title: 'Department Deleted',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
                       location.reload();
                   }
                   else {
-                      alert('Something Went Wrong');
-                      this._Route.navigate(['/admin/role']);
+                    Swal.fire({
+                      position: 'center',
+                      type: 'error',
+                      title: 'Department Not Editted',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
+                      this._Route.navigate(['/Admin/Department']);
                   }
               }
               )

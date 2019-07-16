@@ -23,13 +23,13 @@ const routes: Routes = [{
   children: [
     {
       path: '',
-      redirectTo: 'department'
+      redirectTo: 'Department'
     },
     {
       path: 'Department',
       component: DepartmentComponent,
       data: {
-        title: 'department'
+        title: 'Department'
       }
     },
     {
@@ -38,9 +38,9 @@ const routes: Routes = [{
       data: {
         title: 'program'
       }
-    }, { path: 'Program/edit/:ProgramID', component: EditProgramComponent
+    }, { path: 'Program/Edit/:ProgramID', component: EditProgramComponent
   },
-  { path: 'Program/add', component: AddProgramComponent
+  { path: 'Program/Add', component: AddProgramComponent
 },
 
     {
@@ -51,7 +51,7 @@ const routes: Routes = [{
       }
     },
     {
-      path: 'Admindashboard',
+      path: 'AdminDashboard',
       component: AdminDashboardComponent,
       data: {
         title: 'AdminDashboard'

@@ -3,7 +3,7 @@ import { RoleService } from './../../role/Services/app.role.Service';
 import { DepartmentModel } from './../Models/app.DepartmentModel';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-edit-department',
   templateUrl: './edit-department.component.html',
@@ -45,14 +45,32 @@ export class EditDepartmentComponent implements OnInit {
           response => {
           this.output = response
           if (this.output.StatusCode == "409") {
-              alert('Role Already Exists');
+            Swal.fire({
+              position: 'center',
+              type: 'error',
+              title: 'Department Already exist',
+              showConfirmButton: false,
+              timer: 1500
+            })
           }
           else if (this.output.StatusCode == "200") {
-              alert('Role Saved Successfully');
-              this._Route.navigate(['/admin/department']);
+            Swal.fire({
+              position: 'center',
+              type: 'success',
+              title: 'Department Editted',
+              showConfirmButton: false,
+              timer: 1500
+            })
+              this._Route.navigate(['Admin/Department']);
           }
           else {
-              alert('Something Went Wrong');
+            Swal.fire({
+              position: 'center',
+              type: 'error',
+              title: 'Department Not Editted',
+              showConfirmButton: false,
+              timer: 1500
+            })
           }
       });
   }

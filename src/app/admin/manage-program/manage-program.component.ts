@@ -3,6 +3,7 @@ import { ProgramService } from './Services/app.Program.Service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-manage-program',
   templateUrl: './manage-program.component.html',
@@ -23,7 +24,9 @@ export class ManageProgramComponent implements OnInit {
   constructor(private _Route: Router, private programSerice: ProgramService) {
     this._programService = programSerice;
 }
-
+addbtn(){
+  this._Route.navigateByUrl('/Admin/Program/Add');
+}
 ngOnInit(): void {
 
 
@@ -45,12 +48,24 @@ Delete(ProgramID) {
           (
           response => {
               if (response.StatusCode == "200") {
-                  alert('Deleted Coordinator Successfully');
+                Swal.fire({
+                  position: 'center',
+                  type: 'success',
+                  title: 'Program Deleted',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
                   location.reload();
               }
               else {
-                  alert('Something Went Wrong');
-                  this._Route.navigate(['admin/Program/All']);
+                Swal.fire({
+                  position: 'center',
+                  type: 'error',
+                  title: 'Something went wrong',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+                  this._Route.navigate(['Admin/Program']);
               }
           }
           )

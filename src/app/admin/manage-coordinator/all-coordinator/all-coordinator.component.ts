@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { CoordinatorViewModel } from '../Model/app.CoordinatorViewModel';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-all-coordinator',
@@ -19,10 +20,13 @@ export class AllCoordinatorComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   displayedColumns: string[] = ['CoordinatorID', 'CoordinatorUserName',
-  'CoordinatorFullName', 'Email', 'Password', 'ContactNo', 'Status', 'DepartmentName', 'Action'];
+  'CoordinatorFullName', 'Email', 'Password', 'ContactNo' , 'DepartmentName', 'Action'];
   dataSource: any;
   constructor(private _Route: Router, private coordinatorService: CoordinatorService) {
       this._coordinatorService = coordinatorService;
+  }
+  addbtn(){
+    this._Route.navigateByUrl('/Admin/Coordinator/Add');
   }
   ngOnInit(): void {
 
@@ -45,12 +49,24 @@ export class AllCoordinatorComponent implements OnInit {
               (
               response => {
                   if (response.StatusCode == "200") {
-                      alert('Deleted Coordinator Successfully');
+                    Swal.fire({
+                      position: 'center',
+                      type: 'success',
+                      title: 'Coordinator Deleted',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
                       location.reload();
                   }
                   else {
-                      alert('Something Went Wrong');
-                      this._Route.navigate(['/Coordinator/All']);
+                    Swal.fire({
+                      position: 'center',
+                      type: 'error',
+                      title: 'something went wrong',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
+                      this._Route.navigate(['/Admin/Coordinator']);
                   }
               }
               )

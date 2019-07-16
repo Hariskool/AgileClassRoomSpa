@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { navItemsStudent } from './../../sideNavbar/_navStudent';
 import { NavService } from './../../Shared/app.NavShare.Service';
 //import { navItems } from './../../sideNavbar/_navAdmin';
@@ -20,7 +21,7 @@ export class DefaultLayoutComponent implements OnDestroy {
   public sidebarMinimized = true;
   private changes: MutationObserver;
   public element: HTMLElement;
-  constructor(private _nav: NavService , @Inject(DOCUMENT) _document?: any, ) {
+  constructor(private _Route: Router, private _nav: NavService , @Inject(DOCUMENT) _document?: any, ) {
     this.changes = new MutationObserver((mutations) => {
       this.sidebarMinimized = _document.body.classList.contains('sidebar-minimized');
     });
@@ -52,5 +53,12 @@ export class DefaultLayoutComponent implements OnDestroy {
   }
   ngOnDestroy(): void {
     this.changes.disconnect();
+  }
+  logout(){
+    localStorage.removeItem('AdminUser');
+    localStorage.removeItem('TeacherUser');
+    localStorage.removeItem('StudentUser');
+    localStorage.removeItem('CoordinatorUser');
+    this._Route.navigate(['/login']);
   }
 }

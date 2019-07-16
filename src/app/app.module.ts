@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -40,7 +41,7 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { NotificationComponent } from './notification/notification.component';
+
 
 import { LoginComponent } from './views/login/login.component';
 
@@ -57,6 +58,7 @@ import { LoginComponent } from './views/login/login.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+
     HttpClientModule,
     FormsModule,
     PerfectScrollbarModule,
@@ -71,12 +73,10 @@ import { LoginComponent } from './views/login/login.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    NotificationComponent,
-
   ],
   providers: [{
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
+    useClass: HashLocationStrategy,
   }],
   bootstrap: [ AppComponent ]
 })

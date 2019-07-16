@@ -1,11 +1,12 @@
 <h4>Edit Department</h4>
 <hr>
-<div class="panel panel-default">
+<div class="panel panel-default mx-auto">
     <div class="panel-heading">Edit Department</div>
     <div class="panel-body">
         <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-4">
+                    <input type="hidden" class="form-control"  name="DepartmentName" [(ngModel)]="DepartmentModel.DepartmentId" >
                     <label for="name">Department Name</label>
                     <input type="text" class="form-control"  name="DepartmentName" [(ngModel)]="DepartmentModel.DepartmentName" maxlength="50"
                         #refDepartmentName="ngModel" id="DepartmentName" required>

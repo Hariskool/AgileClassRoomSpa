@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { EditcourseComponent } from './manage-course/editcourse/editcourse.component';
 import { AddcourseComponent } from './manage-course/addcourse/addcourse.component';
@@ -20,11 +21,13 @@ import { EditenrolComponent } from './manage-enrolment/editenrol/editenrol.compo
 import { EditsectionComponent } from './manage-section/editsection/editsection.component';
 import { AddsectionComponent } from './manage-section/addsection/addsection.component';
 import {CoordinatorDashboardComponent} from './coordinator-dashboard/coordinator-dashboard.component';
+
 @NgModule({
   declarations: [ManageTeacherComponent, ManageSectionComponent,
      ManageCourseComponent, AddcourseComponent, EditcourseComponent ,
     ManageEnrolmentComponent,ManageStudentComponent, EditteacherComponent, AddteacherComponent, AddstudentComponent,
-    EditstudentComponent, AdllenrolComponent, CoordinatorDashboardComponent, EditenrolComponent, EditsectionComponent, AddsectionComponent],
+    EditstudentComponent, AdllenrolComponent, CoordinatorDashboardComponent,
+     EditenrolComponent, EditsectionComponent, AddsectionComponent],
   imports: [
     CommonModule,
     CoordinatorRoutingModule,

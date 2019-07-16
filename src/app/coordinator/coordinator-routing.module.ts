@@ -1,3 +1,5 @@
+import { CoordinatorDashboardComponent } from './coordinator-dashboard/coordinator-dashboard.component';
+import { CoordinatorDashboard } from './coordinator-dashboard/Model/app.CoordinatorDashboardMode';
 import { AddcourseComponent } from './manage-course/addcourse/addcourse.component';
 import { ManageStudentComponent } from './manage-student/manage-student.component';
 import { ManageTeacherComponent } from './manage-teacher/manage-teacher.component';
@@ -101,6 +103,10 @@ const routes: Routes = [{
     {
       path: 'Addsection',
       component: AddsectionComponent,
+    },
+    {
+      path: 'CoordinatorDashboard',
+      component: CoordinatorDashboardComponent,
     },
   ],
 }

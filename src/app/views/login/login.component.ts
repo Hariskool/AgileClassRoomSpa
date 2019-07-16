@@ -64,7 +64,7 @@ export class LoginComponent  implements OnInit
                       verticalPosition: 'bottom'
                     });
 
-                    this._Route.navigate(['/admin']);
+                    this._Route.navigate(['/Admin/AdminDashboard']);
                 }
                 if (response.Usertype == "2")
                 {
@@ -73,7 +73,7 @@ export class LoginComponent  implements OnInit
                     config.verticalPosition = this.verticalPosition;
 
                     this.snackBar.open("Logged in Successfully Student", this.action ? this.actionButtonLabel : undefined, config);
-                    this._Route.navigate(['/student']);
+                    this._Route.navigate(['/Student/StudentDashboard']);
                 }
                 if (response.Usertype == "3")
                 {
@@ -82,7 +82,7 @@ export class LoginComponent  implements OnInit
                     config.verticalPosition = this.verticalPosition;
 
                     this.snackBar.open("Logged in Successfully Teacher", this.action ? this.actionButtonLabel : undefined, config);
-                    this._Route.navigate(['/teacher']);
+                    this._Route.navigate(['/Teacher/TeacherDashboard']);
                 }
                 if (response.Usertype == "4")
                 {
@@ -98,7 +98,7 @@ export class LoginComponent  implements OnInit
                       verticalPosition: 'bottom'
                     });
 
-                    this._Route.navigate(['/coordinator']);
+                    this._Route.navigate(['/Coordinator/CoordinatorDashboard']);
                 }
             });
 
