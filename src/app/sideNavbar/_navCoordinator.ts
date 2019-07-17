@@ -32,7 +32,7 @@ export interface NavData {
 export const navItemsCoordinator: NavData[] = [
   {
     name: 'Dashboard',
-    url: '/Coordinator/Coordinatordashboard',
+    url: '/Coordinator/CoordinatorDashboard',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',

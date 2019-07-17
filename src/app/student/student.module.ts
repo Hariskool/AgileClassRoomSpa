@@ -13,10 +13,11 @@ import { EditTaskComponent } from './Task/edit-task/edit-task.component';
 import { GetresultComponent } from './getresult/getresult.component';
 import { GetannoucmentComponent } from './getannoucment/getannoucment.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 @NgModule({
   declarations: [EpicComponent, AddepicComponent, EditepicComponent, SprintComponent,
      ActiveSprintComponent, AddTaskComponent,
-      EditTaskComponent, GetresultComponent, GetannoucmentComponent],
+      EditTaskComponent, GetresultComponent, GetannoucmentComponent, StudentDashboardComponent],
   imports: [
     CommonModule,
     StudentRoutingModule,

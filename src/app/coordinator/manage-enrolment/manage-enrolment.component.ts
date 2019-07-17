@@ -3,6 +3,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 import { EnrolModel } from './Models/app.EnrolModel';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-manage-enrolment',
   templateUrl: './manage-enrolment.component.html',
@@ -25,6 +26,9 @@ export class ManageEnrolmentComponent implements OnInit {
   )  {
     this._enrolService = enrolService;
   }
+  addbtn(){
+    this._Route.navigateByUrl('/Coordinator/Enrolment/Add');
+  }
 
   ngOnInit(): void {
 
@@ -46,12 +50,24 @@ export class ManageEnrolmentComponent implements OnInit {
       (
         response => {
           if (response.StatusCode == "200") {
-            alert('Deleted Enrol Successfully');
+            Swal.fire({
+              position: 'center',
+              type: 'success',
+              title: ' Deleted',
+              showConfirmButton: false,
+              timer: 1500
+            })
             location.reload();
           }
           else {
-            alert('Something Went Wrong');
-            this._Route.navigate(['/Course']);
+            Swal.fire({
+              position: 'center',
+              type: 'error',
+              title: ' Error',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            this._Route.navigate(['/Coordinator/Enrolment']);
           }
         }
       )

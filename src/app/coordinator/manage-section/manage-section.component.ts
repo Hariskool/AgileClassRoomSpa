@@ -3,6 +3,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 import {SectionModel} from "./Models/app.SectionModel";
 import {SectionService} from "./Services/app.section.Service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-manage-section',
@@ -26,6 +27,9 @@ export class ManageSectionComponent implements OnInit {
     this._sectionService = sectionService;
 
   }
+  addbtn(){
+    this._Route.navigateByUrl('/Coordinator/Section/Add');
+  }
 
   ngOnInit(): void {
 
@@ -47,12 +51,24 @@ export class ManageSectionComponent implements OnInit {
       (
         response => {
           if (response.StatusCode == "200") {
-            alert('Deleted Section Successfully');
+            Swal.fire({
+              position: 'center',
+              type: 'success',
+              title: ' Deleted',
+              showConfirmButton: false,
+              timer: 1500
+            })
             location.reload();
           }
           else {
-            alert('Something Went Wrong');
-            this._Route.navigate(['/Course']);
+            Swal.fire({
+              position: 'center',
+              type: 'error',
+              title: ' Error',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            this._Route.navigate(['/Coordinator/Section']);
           }
         }
       )

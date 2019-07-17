@@ -32,7 +32,7 @@ export interface NavData {
 export const navItemsTeacher: NavData[] = [
   {
     name: 'Dashboard',
-    url: '/Teacher/Teacherdashboard',
+    url: '/Teacher/TeacherDashboard',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -64,18 +64,14 @@ export const navItemsTeacher: NavData[] = [
     icon: 'icon-puzzle'
   },
   {
-    name: 'RegisteredStudents',
+    name: 'RegisteredStudent',
     url: '/Teacher/GetStudent',
     icon: 'icon-puzzle'
   },
   {
     name: 'Groups',
-    url: '/Teacher/Groups',
+    url: '/Teacher/Group',
     icon: 'icon-puzzle'
   },
-  {
-    name: 'Result',
-    url: '/Teacher/Result',
-    icon: 'icon-puzzle'
-  },
+
 ];

@@ -27,6 +27,10 @@ export class ManageAssignprojectComponent implements OnInit {
 
    }
 
+   addbtn(){
+    this._Route.navigateByUrl('/Teacher/AssignProject/Add');
+  }
+
    ngOnInit(): void {
 
 

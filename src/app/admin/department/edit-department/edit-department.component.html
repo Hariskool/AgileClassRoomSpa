@@ -1,35 +1,29 @@
-<h4>Edit Department</h4>
-<hr>
-<div class="panel panel-default mx-auto">
-    <div class="panel-heading">Edit Department</div>
-    <div class="panel-body">
+
+<div class="col-md-8 mx-auto">
+    <div class="card">
         <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
-            <div class="row">
-                <div class="col-md-4">
-                    <input type="hidden" class="form-control"  name="DepartmentName" [(ngModel)]="DepartmentModel.DepartmentId" >
-                    <label for="name">Department Name</label>
-                    <input type="text" class="form-control"  name="DepartmentName" [(ngModel)]="DepartmentModel.DepartmentName" maxlength="50"
-                        #refDepartmentName="ngModel" id="DepartmentName" required>
-                    <div *ngIf="!refDepartmentName.valid  && (refDepartmentName.dirty || refDepartmentName.touched)" class="alert alert-danger">
-                        <div [hidden]="!refDepartmentName.errors.required">
-                            Department is required
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="name">Description</label>
-                    <input type="text" name="Description" [(ngModel)]="DepartmentModel.Description" maxlength="50" #refStatus="ngModel"
-                        id="Description">
+      <div class="card-header">
+        <strong>Department</strong>
+        <small>Form</small>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="company">DepartmentName</label>
+          <input class="form-control" id="DepartmentName" name="DepartmentName" placeholder="Enter your DepartmentName" type="text"[(ngModel)]="DepartmentModel.DepartmentName">
+        </div>
+        <div class="form-group">
+          <label for="vat">Description</label>
+          <textarea class="form-control" id="CourseCode" name="Description"  placeholder="Enter your Description"  rows="9" type="text" [(ngModel)]="DepartmentModel.Description">
+       </textarea>
+          </div>
 
-                </div>
-                <div class="col-md-4">
-                    <button type="submit" style="margin-top: 10px" [disabled]="!f.form.valid" class="btn btn-success">Submit</button>
-                    <a style="margin-left: 10px; margin-top:7px;" class="btn btn-info" [routerLink]="['/admin/department']">
-                        All Departments </a>
-                </div>
 
-            </div>
-        </form>
-
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+        <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+      </div>
+    </form>
     </div>
-</div>
+
+  </div>

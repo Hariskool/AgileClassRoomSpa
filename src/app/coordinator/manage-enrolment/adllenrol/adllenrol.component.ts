@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-adllenrol',
   templateUrl: './adllenrol.component.html',
@@ -58,14 +59,33 @@ console.log(this.enrolModel);
       response => {
         this.output = response
         if (this.output.StatusCode == "409") {
-          alert('Enrolment Already Exists');
+          Swal.fire({
+            position: 'center',
+            type: 'error',
+            title: 'Already Existed',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
+
         else if (this.output.StatusCode == "200") {
-          alert('Enrolment Saved Successfully');
-          this._Route.navigate(['coordinator/course']);
+          Swal.fire({
+            position: 'center',
+            type: 'success',
+            title: ' Edited',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this._Route.navigate(['Coordinator/Enrolment']);
         }
         else {
-          alert('Something Went Wrong');
+          Swal.fire({
+            position: 'center',
+            type: 'error',
+            title: ' Error',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
       });
   }

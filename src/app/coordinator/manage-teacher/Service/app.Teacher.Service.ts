@@ -21,6 +21,7 @@ export class TeacherService{
         this.token = this.data.token;
       }
       public SaveTeacher(teacherModel: TeacherModel) {
+        console.log('teacher'+ teacherModel);
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);
         return this.http.post<any>(this.apiUrl, teacherModel, { headers: headers })

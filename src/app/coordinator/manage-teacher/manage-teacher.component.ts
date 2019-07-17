@@ -3,6 +3,7 @@ import { TeacherModel } from './Model/app.TeacherModel';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatPaginator, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-manage-teacher',
@@ -19,7 +20,7 @@ export class ManageTeacherComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   displayedColumns: string[] = ['TeacherName', 'EmailID',
-  'ContactNo', 'Password', 'Status', 'Department'];
+  'ContactNo', 'Password', 'Department','Action'];
   dataSource: any;
   constructor(private _Route: Router,
     private teacherService: TeacherService,
@@ -27,6 +28,9 @@ export class ManageTeacherComponent implements OnInit {
 this._teacherService = teacherService;
 
    }
+   addbtn(){
+    this._Route.navigateByUrl('/Coordinator/Teacher/Add');
+  }
 
    ngOnInit(): void {
 
@@ -49,12 +53,24 @@ Delete(TeacherId) {
             (
             response => {
                 if (response.StatusCode == "200") {
-                    alert('Deleted Teacher Successfully');
+                  Swal.fire({
+                    position: 'center',
+                    type: 'success',
+                    title: ' Deleted',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
                     location.reload();
                 }
                 else {
-                    alert('Something Went Wrong');
-                    this._Route.navigate(['/Course']);
+                  Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: ' Error',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                    this._Route.navigate(['/Coordinator/Teacher']);
                 }
             }
             )

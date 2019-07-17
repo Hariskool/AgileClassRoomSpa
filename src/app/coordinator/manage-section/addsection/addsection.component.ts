@@ -4,6 +4,7 @@ import {CourseModel} from "../../manage-course/Models/app.CourseModel";
 import {TeacherModel} from "../../manage-teacher/Model/app.TeacherModel";
 import {SectionService} from "../Services/app.section.Service";
 import {SectionModel} from "../Models/app.SectionModel";
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-addsection',
   templateUrl: './addsection.component.html',
@@ -46,14 +47,32 @@ export class AddsectionComponent implements OnInit {
       response => {
         this.output = response
         if (this.output.StatusCode == "409") {
-          alert('Section Already Exists');
+          Swal.fire({
+            position: 'center',
+            type: 'error',
+            title: ' Already existed',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
         else if (this.output.StatusCode == "200") {
-          alert('Section Saved Successfully');
-          this._Route.navigate(['coordinator/course']);
+          Swal.fire({
+            position: 'center',
+            type: 'success',
+            title: ' Added',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this._Route.navigate(['Coordinator/Section']);
         }
         else {
-          alert('Something Went Wrong');
+          Swal.fire({
+            position: 'center',
+            type: 'error',
+            title: ' Error',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
       });
   }

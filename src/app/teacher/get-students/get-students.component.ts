@@ -3,6 +3,7 @@ import { RegisteredStudent } from './Model/app.RegisteredStudent';
 import { MatSort, MatPaginator, MatTableDataSource } from '@angular/material';
 import { AssignProjectService } from '../manage-assignproject/Service/app.AssignProject.Service';
 import { Router } from '@angular/router';
+import { RegisteredStudentService } from './Service/app.GetSTD.Service';
 
 @Component({
   selector: 'app-get-students',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class GetStudentsComponent implements OnInit {
 
-  private _assignProjectService;
+  private _registeredStudentService;
   registeredStudent: RegisteredStudent = new RegisteredStudent();
   title = 'All RegisteredStudent';
     output: any;
@@ -22,16 +23,16 @@ export class GetStudentsComponent implements OnInit {
   'Contactno','CourseName','SectionNo','Cgpa','Semester'];
   dataSource: any;
   constructor(private _Route: Router,
-    private assignProjectService: AssignProjectService,
+    private registeredStudentService: RegisteredStudentService,
    )  {
-       this._assignProjectService = assignProjectService;
+       this._registeredStudentService = registeredStudentService;
 
    }
 
    ngOnInit(): void {
 
 
-    this._assignProjectService.TeacherStudents().subscribe(
+    this._registeredStudentService.GetAllStudents().subscribe(
         allCourses => {
             this.registeredStudent = allCourses
             this.dataSource = new MatTableDataSource(allCourses);

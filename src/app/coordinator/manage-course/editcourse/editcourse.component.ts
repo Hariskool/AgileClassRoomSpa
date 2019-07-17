@@ -3,7 +3,7 @@ import { ProgramViewModel } from '../../../admin/manage-program/Models/app.Progr
 import { Router, ActivatedRoute } from '@angular/router';
 import { CourseModel } from '../Models/app.CourseModel';
 import { CourseService } from '../Services/app.course.Service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-editcourse',
   templateUrl: './editcourse.component.html',
@@ -25,7 +25,7 @@ export class EditcourseComponent implements OnInit {
 
    ngOnInit(): void {
 
-    this.ProgramID = this._routeParams.snapshot.params['ProgramID'];
+    this.ProgramID = this._routeParams.snapshot.params['CoruseID'];
     this._courseService.GetCourseById(this.ProgramID).subscribe(
         course => {
             this.courseViewModel = course;
@@ -47,14 +47,32 @@ export class EditcourseComponent implements OnInit {
             response => {
             this.output = response
             if (this.output.StatusCode == "409") {
-                alert('Course Already Exists');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Already Existed',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
             else if (this.output.StatusCode == "200") {
-                alert('Course Saved Successfully');
-                this._Route.navigate(['coordinator/course']);
+              Swal.fire({
+                position: 'center',
+                type: 'success',
+                title: 'Course  Edited',
+                showConfirmButton: false,
+                timer: 1500
+              })
+                this._Route.navigate(['Coordinator/Course']);
             }
             else {
-                alert('Something Went Wrong');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Error  Course',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
         });
     }

@@ -10,6 +10,10 @@ import { AnnoucementService } from './Service/app.Annoucement.Service';
   styleUrls: ['./manage-annoucement.component.scss']
 })
 export class ManageAnnoucementComponent implements OnInit {
+
+  addbtn(){
+    this._Route.navigateByUrl('/Teacher/Annoucement/Add');
+  }
   private _annoucementService;
 
   annoucementModel: AnnoucementModel = new AnnoucementModel();

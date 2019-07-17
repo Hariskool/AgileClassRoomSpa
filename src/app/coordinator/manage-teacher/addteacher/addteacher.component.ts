@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TeacherModel } from '../Model/app.TeacherModel';
 import { Router } from '@angular/router';
 import { TeacherService } from '../Service/app.Teacher.Service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addteacher',
@@ -31,14 +32,32 @@ this._teacherService = teacherService;
             response => {
             this.output = response
             if (this.output.StatusCode == "409") {
-                alert('Teacher Already Exists');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: ' Already',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
             else if (this.output.StatusCode == "200") {
-                alert('Teacher Saved Successfully');
-                this._Route.navigate(['/Teacher/All']);
+              Swal.fire({
+                position: 'center',
+                type: 'success',
+                title: ' Added',
+                showConfirmButton: false,
+                timer: 1500
+              })
+                this._Route.navigate(['Coordinator/Teacher']);
             }
             else {
-                alert('Something Went Wrong');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: ' Error',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
         });
     }

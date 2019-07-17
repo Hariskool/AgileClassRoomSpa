@@ -1,3 +1,43 @@
-<p>
-  editsection works!
-</p>
+<div class="col-md-10 mx-auto">
+    <div class="card">
+
+        <div class="card-header">
+          <strong>Section</strong>
+          <small>Form</small>
+
+        </div>
+        <form class="form-inline" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+        <div class="card-body">
+
+            <div class="form-group mr-sm-2">
+              <label for="SectionNo" class="mr-sm-2">SectionNo</label>
+              <input class="form-control mr-sm-2" id="SectionNo" name="SectionNo" placeholder="Enter SectionNo" type="number" [(ngModel)]="sectionModel.SectionNo">
+            </div>
+          <div class="form-group mr-sm-2"><label for="Course" class="mr-sm-2">Course</label>
+            <select required name="CourseID" #refCourse="ngModel" class="form-control mr-sm-2" name="CourseID" [(ngModel)]="sectionModel.CourseID">
+              <option>Please select Value</option>
+              <option *ngFor="let cor of CourseList" [ngValue]="cor.CourseID">
+                {{cor.CourseCode}}--{{cor.CourseName}}
+              </option>
+            </select>
+        </div>
+
+            <div class="form-group mr-sm-2"><label for="Course" class="mr-sm-2">Teacher</label>
+              <select required name="TeacherID" #refTeacher="ngModel" class="form-control mr-sm-2" name="TeacherID" [(ngModel)]="sectionModel.TeacherID">
+                <option>Please select Value</option>
+                <option *ngFor="let tec of TeacherList" [ngValue]="tec.TeacherId">
+                  {{tec.FullName}}--{{tec.EmailId}}
+                </option>
+              </select>
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+          <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+          <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+

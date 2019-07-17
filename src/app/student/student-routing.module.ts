@@ -5,6 +5,9 @@ import { AddepicComponent } from './epic/addepic/addepic.component';
 import { EpicComponent } from './epic/epic.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SprintComponent } from './sprint/sprint.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { GetannoucmentComponent } from './getannoucment/getannoucment.component';
 const routes: Routes = [{
   path: '',
   data: {
@@ -14,6 +17,13 @@ const routes: Routes = [{
     {
       path: '',
       redirectTo: 'course'
+    },
+    {
+      path: 'StudentDashboard',
+      component: StudentDashboardComponent,
+      data: {
+        title: 'ActiveSprint'
+      }
     },
     {
       path: 'ActiveSprint',
@@ -33,8 +43,19 @@ const routes: Routes = [{
       component: EditTaskComponent,
     },
     {
+      path: 'GetAnnoucement',
+      component: GetannoucmentComponent,
+    },
+    {
       path: 'Epic',
       component: EpicComponent,
+      data: {
+        title: 'Epic'
+      }
+    },
+    {
+      path: 'Sprint',
+      component: SprintComponent,
       data: {
         title: 'Epic'
       }

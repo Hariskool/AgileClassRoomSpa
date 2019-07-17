@@ -1,12 +1,13 @@
 
-<div class="col-md-8">
+<div class="col-md-8 mx-auto">
   <div class="card">
       <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="card-header">
-      <strong>Progran</strong>
+      <strong>Course</strong>
       <small>Form</small>
     </div>
     <div class="card-body">
+        <input class="form-control" id="CourseName" name="CourseName" placeholder="Enter your CourseName" type="hidden"[(ngModel)]="courseViewModel.CourseID">
       <div class="form-group">
         <label for="company">CourseName</label>
         <input class="form-control" id="CourseName" name="CourseName" placeholder="Enter your CourseName" type="text"[(ngModel)]="courseViewModel.CourseName">

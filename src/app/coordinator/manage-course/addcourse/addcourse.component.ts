@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProgramViewModel } from '../../../admin/manage-program/Models/app.ProgramViewModel';
 import { CourseModel } from '../Models/app.CourseModel';
 import { CourseService } from '../Services/app.course.Service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-addcourse',
   templateUrl: './addcourse.component.html',
@@ -35,14 +36,32 @@ export class AddcourseComponent implements OnInit {
             response => {
             this.output = response
             if (this.output.StatusCode == "409") {
-                alert('Course Already Exists');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Course Already exist',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
             else if (this.output.StatusCode == "200") {
-                alert('Course Saved Successfully');
-                this._Route.navigate(['coordinator/course']);
+              Swal.fire({
+                position: 'center',
+                type: 'success',
+                title: 'Course Added',
+                showConfirmButton: false,
+                timer: 1500
+              })
+                this._Route.navigate(['Coordinator/Course']);
             }
             else {
-                alert('Something Went Wrong');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Something went wrong',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
         });
     }

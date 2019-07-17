@@ -1,3 +1,33 @@
-<p>
-  editteacher works!
-</p>
+
+<div class="col-md-8 mx-auto">
+    <div class="card">
+        <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+      <div class="card-header">
+        <strong>Teacher</strong>
+        <small>Form</small>
+      </div>
+        <div class="form-group">
+          <label for="vat">FullName</label>
+          <input class="form-control" id="fullname" name="fullname"  placeholder="Enter your" type="text" [(ngModel)]="teacherModel.FullName">
+        </div>
+        <div class="form-group">
+          <label for="street">Email</label>
+          <input class="form-control" id="email" name="email" placeholder="Enter Email" type="email" [(ngModel)]="teacherModel.EmailId">
+        </div>
+        <div class="form-group">
+          <label for="street">Password</label>
+          <input class="form-control" id="password" name="password" placeholder="Enter Email" type="password" [(ngModel)]="teacherModel.Password">
+        </div>
+          <div class="form-group">
+            <label for="contactNo">Contact no</label>
+            <input class="form-control" id="Contact no" placeholder="Enter your Contact" type="number" name="Contact no" [(ngModel)]="teacherModel.Contactno">
+          </div>
+
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+        <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+      </div>
+    </form>
+    </div>
+
+  </div>

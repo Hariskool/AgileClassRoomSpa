@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeacherModel } from '../Model/app.TeacherModel';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editteacher',
@@ -24,7 +25,7 @@ this._teacherService = teacherService;
 
    ngOnInit(): void {
 
-    this.TeacherID = this._routeParams.snapshot.params['TeacherId'];
+    this.TeacherID = this._routeParams.snapshot.params['TeacherID'];
 
     this._teacherService.GetTeacherById(this.TeacherID).subscribe(
       teacher => {
@@ -43,14 +44,32 @@ this._teacherService = teacherService;
             response => {
             this.output = response
             if (this.output.StatusCode == "409") {
-                alert('Teacher Already Exists');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: ' Already',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
             else if (this.output.StatusCode == "200") {
-                alert('Teacher Saved Successfully');
-                this._Route.navigate(['/Student/All']);
+              Swal.fire({
+                position: 'center',
+                type: 'success',
+                title: ' Added',
+                showConfirmButton: false,
+                timer: 1500
+              })
+                this._Route.navigate(['Coordinator/Teacher']);
             }
             else {
-                alert('Something Went Wrong');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: ' Error',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
         });
     }

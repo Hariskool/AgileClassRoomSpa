@@ -14,7 +14,7 @@ export class CourseService {
 
   private data: any;
   private apiUrl = environment.apiEndpoint +"/api/ManageCourse/";
-  private apiUrlProgram = environment.apiEndpoint +"/api/GetTeachers/";
+  private apiUrlProgram = environment.apiEndpoint +"/api/GetProgram/";
   token: any;
   username: any;
 
@@ -51,6 +51,7 @@ constructor(private http: HttpClient) {
 
     // Get All Role By ID
     public GetCourseById(CourseID) {
+      console.log(CourseID);
         var editUrl = this.apiUrl + '/' + CourseID;
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         headers = headers.append('Authorization', 'Bearer ' + `${this.token}`);

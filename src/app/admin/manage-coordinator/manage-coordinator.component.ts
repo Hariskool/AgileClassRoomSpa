@@ -58,7 +58,7 @@ this._departmentService = departmentService;
                 showConfirmButton: false,
                 timer: 1500
               })
-                this._Route.navigate(['/Amdin/Coordinator']);
+                this._Route.navigate(['/Admin/Coordinator']);
             }
             else {
               Swal.fire({

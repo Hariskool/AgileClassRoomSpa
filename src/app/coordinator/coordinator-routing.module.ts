@@ -1,3 +1,4 @@
+import { EditenrolComponent } from './manage-enrolment/editenrol/editenrol.component';
 import { CoordinatorDashboardComponent } from './coordinator-dashboard/coordinator-dashboard.component';
 import { CoordinatorDashboard } from './coordinator-dashboard/Model/app.CoordinatorDashboardMode';
 import { AddcourseComponent } from './manage-course/addcourse/addcourse.component';
@@ -35,7 +36,7 @@ const routes: Routes = [{
       }
     },
     {
-      path: 'Addcourse',
+      path: 'Course/Add',
       component: AddcourseComponent,
     },
     {
@@ -56,8 +57,12 @@ const routes: Routes = [{
         title: 'enrolment'
       }
     },{
-      path: 'Addenrol',
+      path: 'Enrolment/Add',
       component: AdllenrolComponent,
+    },
+    {
+      path: 'Enrolment/Edit/:EnrolmentID',
+      component: EditenrolComponent,
     },
     {
       path: 'Student',
@@ -67,7 +72,7 @@ const routes: Routes = [{
       }
     },
     {
-      path: 'Addstudent',
+      path: 'Student/Add',
       component: AddstudentComponent,
     },
     {
@@ -82,26 +87,26 @@ const routes: Routes = [{
       }
     },
     {
-      path: 'Addteacher',
+      path: 'Teacher/Add',
       component: AddteacherComponent,
     },
     {
-      path: 'Teacher/edit/:TeacherID',
+      path: 'Teacher/Edit/:TeacherID',
       component: EditteacherComponent,
     },
     {
       path: 'Section',
       component: ManageSectionComponent,
       data: {
-        title: 'section'
+        title: 'Section'
       }
     },
     {
-      path: 'Section/edit/:SectionID',
+      path: 'Section/Edit/:SectionID',
       component: EditsectionComponent,
     },
     {
-      path: 'Addsection',
+      path: 'Section/Add',
       component: AddsectionComponent,
     },
     {

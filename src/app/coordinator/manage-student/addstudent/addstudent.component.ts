@@ -2,6 +2,7 @@ import { StudentModel } from './../Model/app.StudentModel';
 import { StudentService } from './../Services/app.Student.Service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addstudent',
@@ -31,14 +32,32 @@ this._studentService = studentService;
             response => {
             this.output = response
             if (this.output.StatusCode == "409") {
-                alert('Student Already Exists');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: ' Already',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
             else if (this.output.StatusCode == "200") {
-                alert('Student Saved Successfully');
-                this._Route.navigate(['/Student/All']);
+              Swal.fire({
+                position: 'center',
+                type: 'success',
+                title: ' Added',
+                showConfirmButton: false,
+                timer: 1500
+              })
+                this._Route.navigate(['/Coordinator/Student']);
             }
             else {
-                alert('Something Went Wrong');
+              Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: ' Error',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }
         });
     }

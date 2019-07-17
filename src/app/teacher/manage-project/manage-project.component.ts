@@ -25,6 +25,10 @@ constructor(private _Route: Router, private projectService: ProjectService) {
   this._projectService = projectService;
 }
 
+addbtn(){
+  this._Route.navigateByUrl('/Teacher/Project/Add');
+}
+
 ngOnInit(): void {
 
 

@@ -1,3 +1,44 @@
-<p>
-  editenrol works!
-</p>
+<div class="col-md-10 mx-auto">
+    <div class="card">
+
+        <div class="card-header">
+          <strong>Enrolment</strong>
+          <small>Form</small>
+
+        </div>
+        <form class="form" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+        <div class="card-body">
+
+
+            <div class="form-group col-sm-4">
+              <label for="postal-code">Section</label>
+              <select required name="ProgramID" #refDepartmentID="ngModel" class="form-control" name="Section" [(ngModel)]="enrolModel.SectionID">
+                <option value=''>Please select Value</option>
+                <option *ngFor="let Section of SectionList" [ngValue]="Section.SectionID">
+                  {{Section.SectionNo}}--{{Section.CourseName}}--{{Section.CourseID}}
+                </option>
+            </select>
+            </div>
+
+            <div class="form-group col-sm-4">
+              <label for="postal-code">Student</label>
+              <select required name="ProgramID" #refDepartmentID="ngModel" class="form-control" name="Student" [(ngModel)]="enrolModel.StudentID">
+                <option value=''>Please select Value</option>
+                <option *ngFor="let Student of StudentList" [ngValue]="Student.StudentId">
+                  {{Student.FullName}}--{{Student.StudentId}}
+                </option>
+            </select>
+            </div>
+
+        </div>
+
+
+
+        <div class="card-footer">
+          <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-user"></i> submit</button>
+          <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+

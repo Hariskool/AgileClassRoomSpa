@@ -3,6 +3,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 import { CourseService } from './Services/app.course.Service';
 import { CourseModel } from './Models/app.CourseModel';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-manage-course',
   templateUrl: './manage-course.component.html',
@@ -25,7 +26,9 @@ export class ManageCourseComponent implements OnInit {
 this._courseService = courseService;
 
    }
-
+   addbtn(){
+    this._Route.navigateByUrl('/Coordinator/Course/Add');
+  }
    ngOnInit(): void {
 
 
@@ -47,12 +50,24 @@ Delete(CourseID) {
             (
             response => {
                 if (response.StatusCode == "200") {
-                    alert('Deleted Courses Successfully');
+                  Swal.fire({
+                    position: 'center',
+                    type: 'success',
+                    title: 'Deleted Course  ',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
                     location.reload();
                 }
                 else {
-                    alert('Something Went Wrong');
-                    this._Route.navigate(['/Course']);
+                  Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: 'Error',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                    this._Route.navigate(['/Coordinator/Course']);
                 }
             }
             )

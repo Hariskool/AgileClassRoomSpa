@@ -1,25 +1,48 @@
 <h4>All Groups</h4>
+<button type="button" class="btn btn-primary pull-right" (click)="addbtn()">
+    Add
+    </button>
+
 <hr>
     <div class="row">
       <div class="col-md-12">
-          <div *ngFor="let group of groupModel" >
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
 
-    <h5 class="card-title">GroupNo{{group.groupNo}}
+          <div class="row">
 
-    </h5>
-    <div *ngFor="let api of group.groupMembers">
-      <div *ngIf="(group.groupId == api.groupId)">
-    <p class="card-text">studentIds{{api.studentId}} </p>
+<div *ngFor="let group of groupModel" >
+
+    <div class="col-md-3">
+    <div class="card" style="width: 20rem;">
+      <div class="card-header">
+          GroupNo:{{group.groupNo}} <i class="fa fa-edit" (click)="EditGroup(ep.epicId)" data-toggle="modal" data-target="#editModal"></i>
+        <div>
+
+          </div>
+      </div>
+      <div class="card-body">
+      <p>
+          GroupNo:{{group.groupNo}} -- {{group.courseName}}
+      </p>
+      <ul class="list-group list-group-flush">
+          <div *ngFor="let api of group.groupMembers">
+              <div *ngIf="(group.groupId == api.groupId)">
+                  <li class="list-group-item">{{api.FullName}} </li>
+
+            </div>
+          </div>
+
+      </ul>
     </div>
-  </div>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+    <div class="card-footer">
+      <div class=""></div>
+      <div class="pull-right"> SectionNO {{group.sectionNo}}
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
 </div>
 </div>
-</div>
-</div>
+     </div>
 
 

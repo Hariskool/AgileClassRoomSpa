@@ -1,4 +1,9 @@
 <h4>All Teachers</h4>
+
+<button type="button" class="btn btn-primary pull-right" (click)="addbtn()">
+    Add
+    </button>
+
 <hr>
     <div class="row">
       <div class="col-md-12">
@@ -21,10 +26,7 @@
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Password </th>
               <td mat-cell *matCellDef="let element"> {{element.Password}} </td>
             </ng-container>
-            <ng-container matColumnDef="Status">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-              <td mat-cell *matCellDef="let element"> {{element.Status== True ? "Active": "DeActive"}} </td>
-            </ng-container>
+
             <ng-container matColumnDef="Department">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> DepartmentName </th>
                 <td mat-cell *matCellDef="let element">  {{element.DepartmentName}} </td>
@@ -37,7 +39,7 @@
             <!-- EditAction Column -->
             <ng-container matColumnDef="Action">
               <th mat-header-cell *matHeaderCellDef> Action </th>
-              <td mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" [routerLink]="['/coordinator/teacher/edit',element.TeacherId]"><mat-icon>edit</mat-icon></button>
+              <td mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" [routerLink]="['/Coordinator/Teacher/Edit',element.TeacherId]"><mat-icon>edit</mat-icon></button>
                 <button mat-mini-fab color="primary"  (click)="Delete(element.TeacherId)"><mat-icon>delete</mat-icon></button>
               </td>
             </ng-container>

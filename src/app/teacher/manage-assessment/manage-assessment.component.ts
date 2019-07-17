@@ -25,6 +25,9 @@ export class ManageAssessmentComponent implements OnInit {
     this._assessmentService = assessmentService;
 }
 
+addbtn(){
+  this._Route.navigateByUrl('/Teacher/Assessment/Add');
+}
 ngOnInit(): void {
 
 

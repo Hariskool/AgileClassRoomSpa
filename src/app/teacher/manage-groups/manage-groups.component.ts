@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { GroupService } from './Service/app.Group.Service';
-import { GroupMemeber } from './Model/app.GroupMemberModel';
+import { GroupMemeberViewModel} from './Model/app.GroupMemberModel';
 
 @Component({
   selector: 'app-manage-groups',
@@ -14,7 +14,7 @@ export class ManageGroupsComponent implements OnInit{
   private _groupService;
 
   groupModel: GroupModel = new GroupModel();
-  groupMemberModel: GroupMemeber[];
+  groupMemberModel: GroupMemeberViewModel[];
 
   title = 'All Group';
     output: any;
@@ -29,6 +29,9 @@ export class ManageGroupsComponent implements OnInit{
 
 }
 
+addbtn(){
+  this._Route.navigateByUrl('/Teacher/Group/Add');
+}
 ngOnInit(): void {
 
 
